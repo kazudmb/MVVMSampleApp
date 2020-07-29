@@ -9,7 +9,8 @@ import com.dmb.mvvmsampleapp.data.db.entities.UserDao
 
 @Database(
     entities = [User::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
