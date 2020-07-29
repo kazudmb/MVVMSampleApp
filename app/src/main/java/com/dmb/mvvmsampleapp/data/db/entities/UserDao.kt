@@ -12,6 +12,7 @@ interface UserDao{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun upsert(user: User) : Long
 
-    @Query("SELECT * FROM user WHERE uid $CURRENT_USER_ID")
-    fun getUser() : LiveData<User>
+    @Query("SELECT * FROM user WHERE uid = $CURRENT_USER_ID")
+    fun getuser() : LiveData<User>
+
 }
