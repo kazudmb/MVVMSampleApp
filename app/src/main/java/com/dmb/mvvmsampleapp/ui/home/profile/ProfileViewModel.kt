@@ -1,7 +1,12 @@
 package com.dmb.mvvmsampleapp.ui.home.profile
 
 import androidx.lifecycle.ViewModel
+import com.dmb.mvvmsampleapp.repository.UserRepository
 
-class ProfileViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class ProfileViewModel(
+    private val repository: UserRepository
+) : ViewModel() {
+    val user = repository.getUser()
+
+
 }
