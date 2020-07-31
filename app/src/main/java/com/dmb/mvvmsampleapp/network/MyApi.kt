@@ -1,6 +1,8 @@
 package com.dmb.mvvmsampleapp.network
 
+import androidx.lifecycle.ViewModelProvider
 import com.dmb.mvvmsampleapp.network.responses.AuthResponse
+import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,8 +21,16 @@ interface MyApi {
 
 
     companion object{
-        operator fun invoke() : MyApi{
+        operator fun invoke(
+            networkConnectionInterceptor: NetworkConnectionInterceptor
+        ) : MyApi{
+
+            val okkHttpClient = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
+
             return Retrofit.Builder()
+                .client(okkHttpClient)
                 .baseUrl("https://api.simplifiedcoding.in/course-apis/mvvm/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
