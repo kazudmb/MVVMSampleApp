@@ -1,11 +1,11 @@
-package com.dmb.mvvmsampleapp.repository
+package com.dmb.mvvmsampleapp.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.dmb.mvvmsampleapp.data.db.AppDatabase
 import com.dmb.mvvmsampleapp.data.db.entities.Quote
-import com.dmb.mvvmsampleapp.network.MyApi
-import com.dmb.mvvmsampleapp.network.responses.SafeApiRequest
+import com.dmb.mvvmsampleapp.data.network.MyApi
+import com.dmb.mvvmsampleapp.data.network.responses.SafeApiRequest
 import com.dmb.mvvmsampleapp.util.Coroutines
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,12 +30,6 @@ class QuotesRepository(
         }
     }
 
-    private fun saveQuotes(quotes: List<Quote>) {
-        Coroutines.io {
-            db.getQuoteDao().saveAllQuotes(quotes)
-        }
-    }
-
     private suspend fun fetchQuotes() {
         if (isFetchNeeded()) {
             val response = apiRequest { api.getQuotes() }
@@ -47,4 +41,9 @@ class QuotesRepository(
         return true
     }
 
+    private fun saveQuotes(quotes: List<Quote>) {
+        Coroutines.io {
+            db.getQuoteDao().saveAllQuotes(quotes)
+        }
+    }
 }

@@ -2,7 +2,7 @@ package com.dmb.mvvmsampleapp.ui.home.quotes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dmb.mvvmsampleapp.repository.QuotesRepository
+import com.dmb.mvvmsampleapp.data.repository.QuotesRepository
 
 @Suppress("UNCHECKED_CAST")
 class QuotesViewModelFactory(

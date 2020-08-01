@@ -2,7 +2,7 @@ package com.dmb.mvvmsampleapp.ui.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dmb.mvvmsampleapp.repository.UserRepository
+import com.dmb.mvvmsampleapp.data.repository.UserRepository
 
 @Suppress("UNCHECKED_CAST")
 class AuthViewModelFactory(

@@ -1,7 +1,7 @@
-package com.dmb.mvvmsampleapp.network
+package com.dmb.mvvmsampleapp.data.network
 
-import com.dmb.mvvmsampleapp.network.responses.AuthResponse
-import com.dmb.mvvmsampleapp.network.responses.QuotesResponse
+import com.dmb.mvvmsampleapp.data.network.responses.AuthResponse
+import com.dmb.mvvmsampleapp.data.network.responses.QuotesResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit

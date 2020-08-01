@@ -3,7 +3,7 @@ package com.dmb.mvvmsampleapp.ui.auth
 import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModel
-import com.dmb.mvvmsampleapp.repository.UserRepository
+import com.dmb.mvvmsampleapp.data.repository.UserRepository
 import com.dmb.mvvmsampleapp.util.ApiException
 import com.dmb.mvvmsampleapp.util.Coroutines
 import com.dmb.mvvmsampleapp.util.NoInternetException

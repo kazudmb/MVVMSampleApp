@@ -1,10 +1,10 @@
-package com.dmb.mvvmsampleapp.repository
+package com.dmb.mvvmsampleapp.data.repository
 
 import com.dmb.mvvmsampleapp.data.db.AppDatabase
 import com.dmb.mvvmsampleapp.data.db.entities.User
-import com.dmb.mvvmsampleapp.network.MyApi
-import com.dmb.mvvmsampleapp.network.responses.AuthResponse
-import com.dmb.mvvmsampleapp.network.responses.SafeApiRequest
+import com.dmb.mvvmsampleapp.data.network.MyApi
+import com.dmb.mvvmsampleapp.data.network.responses.AuthResponse
+import com.dmb.mvvmsampleapp.data.network.responses.SafeApiRequest
 
 class UserRepository(
     private val api: MyApi,

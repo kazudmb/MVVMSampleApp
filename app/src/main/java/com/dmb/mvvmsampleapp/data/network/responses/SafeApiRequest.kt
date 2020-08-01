@@ -1,4 +1,4 @@
-package com.dmb.mvvmsampleapp.network.responses
+package com.dmb.mvvmsampleapp.data.network.responses
 
 import com.dmb.mvvmsampleapp.util.ApiException
 import org.json.JSONException

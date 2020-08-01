@@ -1,4 +1,4 @@
-package com.dmb.mvvmsampleapp.network
+package com.dmb.mvvmsampleapp.data.network
 
 import android.content.Context
 import android.net.ConnectivityManager
