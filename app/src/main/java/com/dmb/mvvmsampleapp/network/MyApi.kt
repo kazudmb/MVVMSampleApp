@@ -1,12 +1,14 @@
 package com.dmb.mvvmsampleapp.network
 
 import com.dmb.mvvmsampleapp.network.responses.AuthResponse
+import com.dmb.mvvmsampleapp.network.responses.QuotesResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface MyApi {
@@ -16,7 +18,7 @@ interface MyApi {
     suspend fun userLogin(
         @Field("email") email: String,
         @Field("password") password: String
-    ) : Response<AuthResponse>
+    ): Response<AuthResponse>
 
     @FormUrlEncoded
     @POST("signup")
@@ -24,13 +26,15 @@ interface MyApi {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ) : Response<AuthResponse>
+    ): Response<AuthResponse>
 
+    @GET("quotes")
+    suspend fun getQuotes(): Response<QuotesResponse>
 
-    companion object{
+    companion object {
         operator fun invoke(
             networkConnectionInterceptor: NetworkConnectionInterceptor
-        ) : MyApi{
+        ): MyApi {
 
             val okkHttpclient = OkHttpClient.Builder()
                 .addInterceptor(networkConnectionInterceptor)
